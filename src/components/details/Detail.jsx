@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import styled from "styled-components";
-import { collection, doc, getDoc } from "firebase/firestore";  
-import db from "../../firebase";
-import img from "../../assets/images/play-icon-black.png";
-import imgs from "../../assets/images/play-icon-white.png";
-import imgss from "../../assets/images/group-icon.png";
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import styled from "styled-components"
+import { collection, doc, getDoc } from "firebase/firestore"
+import db from "../../firebase"
+import img from "../../assets/images/play-icon-black.png"
+import imgs from "../../assets/images/play-icon-white.png"
+import imgss from "../../assets/images/group-icon.png"
 
 const Detail = (props) => {
   const { id } = useParams();
@@ -71,11 +71,13 @@ const Container = styled.div`
   min-height: calc(100vh-100px);
   overflow-x: hidden;
   overflow-y: hidden;
-  display: block;
-//   top: 50px;
+  display: block;\
   padding: 0 calc(3.5vw + 5px);
-`;
 
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+`;
 const Background = styled.div`
   left: 0px;
   opacity: 0.8;
@@ -90,7 +92,8 @@ const Background = styled.div`
 
     @media (max-width: 768px) {
       width: initial;
-    }
+      height: 200px;
+    }\
   }
 `;
 
@@ -105,10 +108,15 @@ const ImageTitle = styled.div`
   padding-bottom: 24px;
   width: 100%;
 
-  img {
+  img{
     max-width: 600px;
     min-width: 200px;
     width: 35vw;
+
+    @media (max-width: 768px) {
+      width: initial;
+      height: auto;
+    }\
   }
 `;
 
